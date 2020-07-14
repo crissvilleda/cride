@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=cride
+POSTGRES_USER=QcIxhAzjqAgTuxjOQwIMMNxFhAENcXUW
+POSTGRES_PASSWORD=DJaHxDHpBTn8Xq0l13YG4VKO74A7avI9Fb0wWdIdbO5ybMW11FHxlKXFG6Wv1ORY
