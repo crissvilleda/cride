@@ -1,0 +1,6 @@
+sudo docker-compose -f local.yml up
+sudo docker-compose -f local.yml ps
+sudo docker rm -f 'id container'
+sudo docker-compose -f local.yml run --rm --service-ports django python manage.py createsuperuser
+
+sudo docker-compose -f local.yml run --rm --service-ports django python manage.py migrate
