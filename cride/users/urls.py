@@ -1,7 +1,10 @@
+"""User Urls"""
+#django
 from django.urls import path
 
-app_name='users'
+#views
+from cride.users.views import UserLoginAPIView
 
 urlpatterns = [
-  #path('index/'),
+  path('users/login/',UserLoginAPIView, name='login'),
 ]

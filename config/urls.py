@@ -10,9 +10,10 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path("users/", include("cride.users.urls", namespace="users")),
+    path('', include("cride.users.urls")),
     #path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path('', include('cride.circles.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

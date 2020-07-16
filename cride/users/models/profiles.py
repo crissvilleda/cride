@@ -41,5 +41,4 @@ class Profile(CRideModel):
     """return user's string representation"""
     return str(self.user)
 
-
-
+ 

@@ -1,6 +1,19 @@
+#--------container
+#build container 
+sudo docker-compose -f local.yml build
+#load containers
 sudo docker-compose -f local.yml up
+#get list of container
 sudo docker-compose -f local.yml ps
+#remove specific container
 sudo docker rm -f 'id container'
-sudo docker-compose -f local.yml run --rm --service-ports django python manage.py createsuperuser
+#run specific container(django)
+sudo docker-compose -f local.yml run --rm --service-ports django
 
+#---------run manage.py commands
+#Create Super User
+sudo docker-compose -f local.yml run --rm --service-ports django python manage.py createsuperuser
+# migrate
 sudo docker-compose -f local.yml run --rm --service-ports django python manage.py migrate
+# make Migrations
+sudo docker-compose -f local.yml run --rm --service-ports django python manage.py makemigrations

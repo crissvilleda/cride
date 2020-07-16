@@ -68,11 +68,14 @@ THIRD_PARTY_APPS = [
     #"allauth",
     #"allauth.account",
     #"allauth.socialaccount",
-    #"django_celery_beat",
+    "django_celery_beat",
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 LOCAL_APPS = [
     "cride.users.apps.UsersAppConfig",
+    "cride.circles.apps.CirclesAppConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -90,6 +93,8 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
+
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
@@ -289,3 +294,11 @@ ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+#Django rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
