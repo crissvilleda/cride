@@ -4,6 +4,7 @@ from django.db import models
 #Utilities
 from cride.utils.models import CRideModel
 
+
 class Circle(CRideModel):
   """
   the circle is a private group where rides are offered and
@@ -27,6 +28,13 @@ class Circle(CRideModel):
     blank=True,
     null=True
   )
+
+  members = models.ManyToManyField(
+    'users.User', 
+    through='circles.Membership',
+    through_fields=('circle','user')
+  )
+
   #stats
   rides_offered = models.PositiveIntegerField(
     default=0

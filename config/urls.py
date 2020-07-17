@@ -13,7 +13,9 @@ urlpatterns = [
     path('', include("cride.users.urls")),
     #path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path('', include('cride.circles.urls'))
+    path('', include('cride.circles.urls')),
+    
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
