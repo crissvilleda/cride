@@ -4,7 +4,6 @@ from django.db import models
 #Utilities
 from cride.utils.models import CRideModel
 
-
 class Circle(CRideModel):
   """
   the circle is a private group where rides are offered and

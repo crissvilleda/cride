@@ -7,6 +7,7 @@ from cride.circles.models import Circle
 
 class CircleModelSerializer(serializers.ModelSerializer):
   """ Circle model serializer"""
+  
   class Meta:
     """meta class"""
     model = Circle
