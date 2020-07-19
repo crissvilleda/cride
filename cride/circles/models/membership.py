@@ -42,5 +42,5 @@ class Membership(CRideModel):
   )
   def __str__(self):
     """Return username and circle"""
-    return f'@{self.user.usename} at #{self.circle.slug_name} '
+    return f'@{self.user.username} at #{self.circle.slug_name} '
 

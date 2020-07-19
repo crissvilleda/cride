@@ -12,21 +12,27 @@ from cride.circles.models import Circle
 from cride.circles.serializers import CircleModelSerializer
 
 #permissions
-from cride.circles.permissions.
+from cride.circles.permissions.circles import IsCircleAdmin
 
 class CircleViewSet(viewsets.ModelViewSet):
   """circle View Set"""
-  queryset = Circle.objects.all()
   serializer_class = CircleModelSerializer
   lookup_field = 'slug_name'
+  
+  def get_queryset(self):
+    """Restrict list to public-only."""
+    queryset = Circle.objects.all()
+    if self.action == 'list':
+      return queryset.filter(is_public=True)
+    return queryset
 
   def get_permissions(self):
     """Assign permissions based on actions """
-
-    permission = [IsAuthenticated]
-
-    if self.action == 'list':
-
+    print('getting permitions')
+    permissions = [IsAuthenticated]
+    if self.action in ['update', 'partial_update']:
+      permissions.append(IsCircleAdmin)
+    return [ permission() for permission in permissions ]
 
   def destroy(self, request, *args, **kwargs):
     """Destroy Circle Function
@@ -35,3 +41,4 @@ class CircleViewSet(viewsets.ModelViewSet):
     
     """
     return Response(status= status.HTTP_204_NO_CONTENT)
+  

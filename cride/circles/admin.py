@@ -3,6 +3,7 @@
 from django.contrib import admin
 #Models
 from cride.circles.models import Circle
+from cride.circles.models import Membership
 
 @admin.register(Circle)
 class CircleAdmin(admin.ModelAdmin):
@@ -21,3 +22,7 @@ class CircleAdmin(admin.ModelAdmin):
     'verified',
     'is_limited'
   )
+
+@admin.register(Membership)
+class MembershipAdmin(admin.ModelAdmin):
+  """Membership Admin"""
