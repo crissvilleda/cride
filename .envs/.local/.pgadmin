@@ -1,0 +1,5 @@
+#PGAdmin Postgres SQL
+#------------------------------------
+PGADMIN_DEFAULT_EMAIL=admin
+PGADMIN_DEFAULT_PASSWORD=SuperSecret
+PGADMIN_LISTEN_PORT=5454

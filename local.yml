@@ -33,6 +33,18 @@ services:
       - local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
+    expose:
+      - "5432"
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    ports:
+      - 5454:5454/tcp
+    env_file:
+      - ./.envs/.local/.pgadmin
 
   #docs:
   #  image: cride_local_docs

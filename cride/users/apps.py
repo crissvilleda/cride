@@ -9,3 +9,4 @@ class UsersAppConfig(AppConfig):
 
     name = 'cride.users'
     verbose_name = 'Users'
+
